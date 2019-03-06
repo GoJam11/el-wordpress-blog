@@ -1,29 +1,3 @@
-# el-blog
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# el-wordpress-blog
+### 用Vue.JS构建前端页面，将Wordpress作为后端服务
+### 浏览[预览地址](https://gojam11.github.io/el-wordpress-blog/dist)
