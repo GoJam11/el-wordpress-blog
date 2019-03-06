@@ -36,7 +36,7 @@ export default {
         "/": "BlogArticle",
         "/About": "About"
       },
-      path: window.location.pathname
+      path: window.location.pathname.match(/\/[^\/\\]*$/)[0]
     };
   },
   computed: {
@@ -52,14 +52,11 @@ export default {
       //console.log(key, keyPath);
       //this.activeIndex = key;
       //window.location.pathname=key
-      this.path=window.location.pathname
+      this.path=window.location.pathname.match(/\/[^\/\\]*$/)[0]
     }
   },
   created() {
-    window.addEventListener("popstate", () => {
-      this.path = window.location.pathname;
-      console.log("changed");
-    });
+    console.log()
   }
 };
 </script>

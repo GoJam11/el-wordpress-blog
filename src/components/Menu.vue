@@ -41,7 +41,8 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      history.pushState({},'',this.comRoute[key])
+      
+      history.pushState({},'',window.location.pathname.match(/(.*)\/[^\/\\]*$/)[1]+this.comRoute[key])
       this.$emit("handleSelect", key, keyPath);
     }
   }
