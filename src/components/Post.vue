@@ -49,6 +49,7 @@ export default {
 }
 .text {
   font-size: 14px;
+  overflow-x:scroll
 }
 
 .item {

@@ -52,11 +52,11 @@ export default {
       //console.log(key, keyPath);
       //this.activeIndex = key;
       //window.location.pathname=key
-      this.path=window.location.pathname.match(/\/[^\/\\]*$/)[0]
+      this.path = window.location.pathname.match(/\/[^\/\\]*$/)[0];
     }
   },
   created() {
-    console.log()
+    console.log();
   }
 };
 </script>
@@ -68,6 +68,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
   color: #202122;
+}
+
+#app img{
+  max-width: 100%
 }
 
 body {
@@ -89,6 +93,8 @@ body {
 @media (max-width: 750px) {
   .outer {
     margin: 20px 10px 0px 10px;
+
+ 
   }
 }
 
