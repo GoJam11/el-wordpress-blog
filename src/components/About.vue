@@ -12,7 +12,7 @@ import axios from "axios";
 export default {
     data:function(){
         return{
-            rawdata:{},
+            rawdata:'Loading...',
             url:'',
             loading:true
         }
@@ -32,6 +32,7 @@ export default {
     margin-top:30px;
     font-size: 14px;
     min-height: 200px;
+    width: 100%
 }
 .pagetitle{
     font-size: 20px

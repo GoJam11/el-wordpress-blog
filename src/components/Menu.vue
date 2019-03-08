@@ -6,6 +6,9 @@
     @select="handleSelect"
     active-text-color="#409eff"
   >
+    <transition appear-class="enter" appear>
+      <h1 class="nav_title">果这里</h1>
+    </transition>
     <el-menu-item index="1">首页</el-menu-item>
     <el-submenu index="2" disabled>
       <template slot="title">目录</template>
@@ -41,10 +44,16 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      
-      history.pushState({},'',window.location.pathname.match(/(.*)\/[^\/\\]*$/)[1]+this.comRoute[key])
+      history.pushState(
+        {},
+        "",
+        window.location.pathname.match(/(.*)\/[^\/\\]*$/)[1] +
+          this.comRoute[key]
+      );
       this.$emit("handleSelect", key, keyPath);
-    }
+    },
+
+    enter: function(el, done) {}
   }
 };
 </script>
@@ -58,5 +67,48 @@ export default {
   top: 0;
   z-index: 1;
   font-weight: 900;
+}
+
+@media (max-width: 750px) {
+  .nav_title {
+    display: none;
+  }
+}
+
+@media (min-width: 750px) {
+  .nav_title {
+    margin: 0;
+    line-height: 60px;
+    display: block;
+    transition: all 0.3s;
+    font-size: 32px;
+  }
+  .enter {
+    transform: translate(-280px, 0px);
+  }
+  .nav_title:hover::first-letter {
+    color: #409eff;
+  }
+  .nav_title:hover {
+    animation: shake 0.5s;
+  }
+  @keyframes shake {
+    33%{
+transform: rotate(20deg);
+    }
+    66%{
+      transform: rotate(-20deg);
+    }
+    100% {
+      
+    }
+  }
+  /**.nav_title:hover::after{
+    background-color: #409eff;
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    content: ''
+  }**/
 }
 </style>

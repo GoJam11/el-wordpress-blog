@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <h1 class="site">果这里</h1>
+
     <Menu :activeIndex="activeIndex" v-on:handleSelect="handleSelect"></Menu>
+
     <div class="outer">
       <keep-alive>
         <component :is="currentCom"></component>
@@ -16,6 +18,7 @@ import BlogArticle from "./components/Article";
 import About from "./components/About";
 import NotFound from "./components/404";
 import axios from "axios";
+import Velocity from "velocity-animate";
 
 export default {
   name: "app",
@@ -55,23 +58,25 @@ export default {
       this.path = window.location.pathname.match(/\/[^\/\\]*$/)[0];
     }
   },
-  created() {
-    console.log();
-  }
+  created() {}
 };
 </script>
 
 <style>
+
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   color: #202122;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-#app img{
-  max-width: 100%
+#app img {
+  max-width: 100%;
 }
 
 body {
@@ -85,16 +90,22 @@ body {
   padding-block-start: 0.67em;
   padding-block-end: 0.67em;
   z-index: 2;
+  display: none;
 }
 
 .outer {
   margin: 20px 40px 0px 40px;
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 20px); /**未加载内容时card的宽度**/
+  margin-bottom: 40px;
 }
 @media (max-width: 750px) {
   .outer {
     margin: 20px 10px 0px 10px;
-
- 
+  }
+  .site {
+    display: block;
   }
 }
 
@@ -102,4 +113,9 @@ a {
   color: #409eff;
   text-decoration: none;
 }
+
+.blogHeader {
+}
+
+
 </style>
