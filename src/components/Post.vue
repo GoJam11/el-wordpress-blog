@@ -81,6 +81,7 @@ export default {
 }
 .title {
   font-size: 20px;
+  cursor: pointer;
 }
 .title:hover {
   color: #409eff;
